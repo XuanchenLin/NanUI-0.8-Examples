@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NanUI Layered Window Demo</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background: transparent;
+      }
+      .head {
+        background: #ff8cb2;
+        width: 70vw;
+        height: 50vw;
+        position: absolute;
+        top: calc(50% - 25vw);
+        left: calc(50% - 35vw);
+        z-index: 2;
+        border-radius: 90% 90% 80% 80% / 120% 120% 60% 60%;
+        animation: monster 1s infinite;
+        -webkit-app-region: drag;
+      }
+      .head:after {
+        content: "";
+        background: #ffa1c7;
+        width: 25%;
+        height: 20%;
+        position: absolute;
+        top: 18%;
+        right: 15%;
+        border-radius: 100%;
+        transform: rotate(30deg);
+      }
+      .head > .eyes {
+        width: 100%;
+        height: 10vw;
+        position: absolute;
+        top: 45%;
+      }
+      .head > .eyes > .eye {
+        background: black;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 100%;
+        position: absolute;
+      }
+      .head > .eyes > .eye:after {
+        content: "";
+        background: white;
+        width: 2.5vw;
+        height: 2.5vw;
+        position: absolute;
+        top: 20%;
+        right: 20%;
+        border-radius: 100%;
+      }
+      .head > .eyes > .eye.left {
+        left: 25%;
+      }
+      .head > .eyes > .eye.right {
+        right: 25%;
+      }
+      .head > .blushes {
+        width: 100%;
+        height: 10vw;
+        position: absolute;
+        top: 65%;
+      }
+      .head > .blushes > .blush {
+        background: #ff4a86;
+        width: 15vw;
+        height: 5vw;
+        border-radius: 100%;
+        position: absolute;
+      }
+      .head > .blushes > .blush.left {
+        left: 5%;
+      }
+      .head > .blushes > .blush.right {
+        right: 5%;
+      }
+      .head .mouth {
+        width: 25vw;
+        height: 7vw;
+        position: absolute;
+        bottom: 10%;
+        left: calc(50% - 12.5vw);
+      }
+      .head .mouth > .lip {
+        width: calc(12.5vw - 2.25vw);
+        height: calc(7vw - 1.5vw);
+        border: solid 1.5vw black;
+        border-top: none;
+        position: absolute;
+        border-radius: 0 0 100% 100% / 0 0 180% 180%;
+      }
+      .head .mouth > .lip.right {
+        right: 0;
+      }
+      .shadow {
+        background: #2f2f2f60;
+        width: 70vw;
+        height: 20vw;
+        position: absolute;
+        top: calc(50% - 10vw + 25vw);
+        left: calc(50% - 35vw);
+        z-index: 1;
+        border-radius: 100%;
+        animation: shadow 1s infinite;
+      }
+      @keyframes monster {
+        0% {
+          width: 70vw;
+          height: 50vw;
+          left: calc(50% - 35vw);
+          border-radius: 90% 90% 80% 80% / 120% 120% 60% 60%;
+        }
+        50% {
+          width: 62vw;
+          height: 53vw;
+          margin-top: -10vw;
+          top: calc(50% - 26.5vw);
+          left: calc(50% - 31vw);
+          border-radius: 100% 100% 80% 80% / 150% 150% 60% 60%;
+        }
+      }
+      @keyframes shadow {
+        0% {
+          width: 70vw;
+          height: 20vw;
+          top: calc(50% - 10vw + 25vw);
+          left: calc(50% - 35vw);
+        }
+        50% {
+          width: 58.33333333vw;
+          height: 16.66666667vw;
+          top: calc(50% - 8.33333333vw + 25vw);
+          left: calc(50% - 29.16666667vw);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <div class="eyes">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+      </div>
+      <div class="blushes">
+        <div class="blush left"></div>
+        <div class="blush right"></div>
+      </div>
+      <div class="mouth">
+        <div class="lip left"></div>
+        <div class="lip right"></div>
+      </div>
+    </div>
+    <div class="shadow"></div>
+  </body>
+</html>

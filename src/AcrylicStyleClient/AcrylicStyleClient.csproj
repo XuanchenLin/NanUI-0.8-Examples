@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFrameworks>netcoreapp3.1;net462;</TargetFrameworks>
+        <UseWindowsForms>true</UseWindowsForms>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' != 'netcoreapp3.1' ">
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
+    <ItemGroup>
+      <Compile Remove="acrylic-client-react-src\**" />
+      <EmbeddedResource Remove="acrylic-client-react-src\**" />
+      <None Remove="acrylic-client-react-src\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="build\favicon.ico" />
+      <None Remove="build\index.html" />
+      <None Remove="build\static\css\2.1b4fbf1f.chunk.css" />
+      <None Remove="build\static\css\main.2608ed5e.chunk.css" />
+      <None Remove="build\static\js\2.chunk.7a245c3f.js" />
+      <None Remove="build\static\js\3.chunk.00cd40c5.js" />
+      <None Remove="build\static\js\main.chunk.5584ddd6.js" />
+      <None Remove="build\static\js\runtime-main.bundle.a0a2461e.js" />
+      <None Remove="build\static\media\close.841c35ba.svg" />
+      <None Remove="build\static\media\minimize.96aa4c07.svg" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="build\favicon.ico" />
+      <EmbeddedResource Include="build\index.html" />
+      <EmbeddedResource Include="build\static\css\2.1b4fbf1f.chunk.css" />
+      <EmbeddedResource Include="build\static\css\main.2608ed5e.chunk.css" />
+      <EmbeddedResource Include="build\static\js\2.chunk.7a245c3f.js" />
+      <EmbeddedResource Include="build\static\js\3.chunk.00cd40c5.js" />
+      <EmbeddedResource Include="build\static\js\main.chunk.5584ddd6.js" />
+      <EmbeddedResource Include="build\static\js\runtime-main.bundle.a0a2461e.js" />
+      <EmbeddedResource Include="build\static\media\close.841c35ba.svg" />
+      <EmbeddedResource Include="build\static\media\minimize.96aa4c07.svg" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="NetDimension.NanUI" Version="0.8.80.123" />
+      <PackageReference Include="NetDimension.NanUI.EmbeddedFileResource" Version="0.8.80.120" />
+    </ItemGroup>
+</Project>
