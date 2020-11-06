@@ -1,0 +1,144 @@
+$theme-bg-color: #eb3b90;
+$deactivate-bg-color: #666;
+
+div.main-window {
+  user-select: none;
+  cursor: default;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  box-sizing: border-box;
+  border: solid 1px $deactivate-bg-color;
+  transition: border-color ease 300ms;
+
+  @at-root .formium-focus & {
+    border: solid 1px $theme-bg-color;
+  }
+
+  div.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span:first-child {
+      font-weight: bold;
+    }
+  }
+
+  > aside.side-bar {
+    width: 15rem;
+    background-color: rgba($deactivate-bg-color, 0.7);
+    transition: background-color ease-in-out 200ms;
+
+    display: flex;
+    align-items: center;
+    -webkit-app-region: drag;
+    justify-content: center;
+    align-items: center;
+
+    @at-root .formium-focus & {
+      background-color: rgba($theme-bg-color, 0.5);
+    }
+
+    div.intro {
+      color: #fff;
+
+      span:last-child {
+        color: rgba(#fff, 0.9);
+      }
+    }
+  }
+
+  > main.main-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+
+    div.intro {
+      color: #666;
+
+      span:last-child {
+        color: #999;
+      }
+    }
+
+    > div.app-bar {
+      position: relative;
+      height: 2.5rem;
+      -webkit-app-region: drag;
+      line-height: 2.5rem;
+      > span {
+        padding: 0 1rem;
+        display: block;
+      }
+
+      > div.sys-commands {
+        display: inline-flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        > .sys-command {
+          height: 2.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 3rem;
+          transition: all ease 200ms;
+          -webkit-app-region: no-drag;
+
+          > svg {
+            fill: #333;
+          }
+
+          &.minimize-box:hover {
+            background-color: rgba(#999, 0.3);
+
+            &:active {
+              background-color: rgba(#999, 0.4);
+            }
+          }
+
+          &.close-box:hover {
+            background-color: #e81123;
+            > svg {
+              fill: white;
+            }
+
+            &:active {
+              background-color: #f1707a;
+            }
+          }
+        }
+      }
+    }
+
+    > div.view-container {
+      flex: 1;
+      position: relative;
+
+      > div.view-context {
+        padding: 1rem;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+
+        .forms {
+          padding: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 0.3rem;
+        }
+
+        .buttons {
+          > button {
+            margin-right: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
