@@ -9,7 +9,7 @@
         <ApplicationManifest>app.manifest</ApplicationManifest>
     </PropertyGroup>
     <ItemGroup>
-      <PackageReference Include="NetDimension.NanUI" Version="0.8.80.144" />
+      <PackageReference Include="NetDimension.NanUI" Version="0.8.80.157" />
       <PackageReference Include="NetDimension.NanUI.Runtime" Version="80.1.15" />
     </ItemGroup>
 </Project>
