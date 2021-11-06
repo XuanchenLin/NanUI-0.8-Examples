@@ -2,10 +2,10 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFrameworks>netcoreapp3.1;net472;</TargetFrameworks>
+        <TargetFrameworks>net5.0-windows;net472;</TargetFrameworks>
         <UseWindowsForms>true</UseWindowsForms>
         <ApplicationIcon>Resources\DemoIcon.ico</ApplicationIcon>
-        <Platforms>AnyCPU;x64;x86</Platforms>
+        <Platforms>AnyCPU</Platforms>
         <Title>WinFormium Demo Application</Title>
     </PropertyGroup>
 
@@ -15,6 +15,10 @@
         <None Remove="wwwroot\**" />
         <EmbeddedResource Include="wwwroot\**" />
     </ItemGroup>
+
+    <PropertyGroup Condition=" '$(TargetFramework)' != 'net5.0-windows' ">
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
 
     <ItemGroup>
         <Compile Update="Properties\Resources.Designer.cs">
@@ -52,12 +56,12 @@
 
 
     <ItemGroup>
-        <PackageReference Include="NetDimension.NanUI" Version="0.8.80.157" />
-        <PackageReference Include="NetDimension.NanUI.DataServiceResource" Version="0.8.80.157" />
-        <PackageReference Include="NetDimension.NanUI.EmbeddedFileResource" Version="0.8.80.157" />
-        <PackageReference Include="NetDimension.NanUI.LocalFileResource" Version="0.8.80.157" />
+        <PackageReference Include="NetDimension.NanUI" Version="0.8.80.493" />
+        <PackageReference Include="NetDimension.NanUI.DataServiceResource" Version="0.8.80.176" />
+        <PackageReference Include="NetDimension.NanUI.EmbeddedFileResource" Version="0.8.80.493" />
+        <PackageReference Include="NetDimension.NanUI.LocalFileResource" Version="0.8.80.176" />
         <PackageReference Include="NetDimension.NanUI.Runtime" Version="80.1.15" />
-        <PackageReference Include="NetDimension.NanUI.ZippedResource" Version="0.8.80.157" />
+        <PackageReference Include="NetDimension.NanUI.ZippedResource" Version="0.8.80.176" />
     </ItemGroup>
 
 </Project>

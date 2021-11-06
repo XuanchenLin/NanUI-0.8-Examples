@@ -2,10 +2,10 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFrameworks>netcoreapp3.1;net472;</TargetFrameworks>
+        <TargetFrameworks>net5.0-windows;net472;</TargetFrameworks>
         <UseWindowsForms>true</UseWindowsForms>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(TargetFramework)' != 'netcoreapp3.1' ">
+    <PropertyGroup Condition=" '$(TargetFramework)' != 'net5.0-windows' ">
         <ApplicationManifest>app.manifest</ApplicationManifest>
     </PropertyGroup>
 
@@ -15,8 +15,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="NetDimension.NanUI" Version="0.8.80.157" />
-        <PackageReference Include="NetDimension.NanUI.EmbeddedFileResource" Version="0.8.80.157" />
+        <PackageReference Include="NetDimension.NanUI" Version="0.8.80.493" />
+        <PackageReference Include="NetDimension.NanUI.EmbeddedFileResource" Version="0.8.80.493" />
         <PackageReference Include="NetDimension.NanUI.Runtime" Version="80.1.15" />
     </ItemGroup>
 </Project>

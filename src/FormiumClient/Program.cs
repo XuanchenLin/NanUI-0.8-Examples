@@ -20,7 +20,7 @@ namespace FormiumClient
         static void Main()
         {
 
-#if NETCOREAPP3_1 || NET5_0
+#if NETCOREAPP3_1_OR_GREATER
             Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 #endif
 
